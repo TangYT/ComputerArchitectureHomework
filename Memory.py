@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
+
 class Memery:
 	mem = []
 
 	#内存初始化
-	def Init_memery(self):
+	def Init(self):
 		self.mem = [0b00000000]*(1024*1024*4)		#初始化内存大小为4M(使用32位地址寻址4M)
 
 	#写函数，使用小端模式存储数据（高位存储在高地址，低位存储在低地址）
