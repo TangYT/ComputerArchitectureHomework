@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-class Memery:
+class Memory:
 	mem = []
 
 	#内存初始化
