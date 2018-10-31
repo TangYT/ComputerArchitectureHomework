@@ -36,7 +36,7 @@ class CPU:
 
 	# 启动CPU
 	def run(self):
-		for i in range(4):
+		while True:
 			self.IF()
 			# 如果没有新的指令，结束运行
 			if not self.IR:
@@ -236,8 +236,9 @@ class CPU:
 	# 写回，Write Back,将数据写会寄存器
 	def WB(self):
 		# 包含指令LUI，AUIPC，ADDI,SLTI,SLTIU,XORI,ORI,ANDI,SLLI,
-		# SRLI,SRAI,NOP，ADD,SUB,SLL,SLT,SLTU,XOR,SRL,SRA,OR,AND
-		if self.opcode_type in ['LUI', 'AUIPC', 'OP_IMM', 'OP']:
+		# SRLI,SRAI,NOP，ADD,SUB,SLL,SLT,SLTU,XOR,SRL,SRA,OR,AND,
+		# LB,LH,LW,LBU,LHU
+		if self.opcode_type in ['LUI', 'AUIPC', 'OP_IMM', 'OP', 'LOAD']:
 			self.Register[self.rd] = self.ALUOuter
 		# 包含指令JAL,JALR
 		elif self.opcode_type in ['JAL', 'JALR']:

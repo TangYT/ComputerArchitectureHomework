@@ -114,7 +114,9 @@ def read_instruction():
         # elif instruction_type == 'J':
         #     pass
         return instruction
-    except OSError:
+    except KeyError:
         print('指令输入错误，请重新输入！')
         return 0x00000013
-
+    except IndexError:
+        print('指令输入错误，请重新输入！')
+        return 0x00000013
