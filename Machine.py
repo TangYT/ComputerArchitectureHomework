@@ -3,12 +3,11 @@ from CPU import CPU
 
 
 class Machine:
-    memory = Memory()
-    cpu = CPU(memory)
-    memory.Init()
 
     def __init__(self):
-        pass
+        self.memory = Memory()
+        self.cpu = CPU(self.memory)
+        self.memory.Init()
 
     def starting_up(self):
         self.cpu.run()

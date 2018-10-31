@@ -10,7 +10,7 @@ class Memory:
 		addr = int(addr)							# 将32位2进制地址转换为10进制
 		for i in range(bytes):
 			self.mem[addr+i] = 0x000000ff & data		# 按字节存数据的低位
-			data = data>>8								# 数据右移八位
+			data = data >> 8								# 数据右移八位
 
 	# 读函数
 	def read(self, addr, bytes):						# 内存读操作（地址，字节数）
